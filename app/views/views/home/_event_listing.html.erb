@@ -1,0 +1,94 @@
+<% if day.wday == 3 %>
+  <div class="event-list-item event-dynamic">
+      <div class="event-list-item-date">
+          <span class="event-date">
+              <span class="event-day"><%= day.strftime("%d") %></span>
+              <span class="event-month"><%= day.strftime("%b, %Y") %></span>
+          </span>
+      </div>
+      <div class="event-list-item-info">
+          <div class="lined-info">
+              <h4><a href="#" class="event-title">Bible Study and Prayer</a></h4>
+          </div>
+          <div class="lined-info">
+              <span class="meta-data"><i class="fa fa-clock-o"></i> Wednesday, <span class="event-time">6:30 PM</span></span>
+          </div>
+          <div class="lined-info event-location">
+              <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">Teleconference: 319-527-2723. Access Code: 233451</span></span>
+          </div>
+      </div>
+      <div class="event-list-item-actions">
+          <!-- <a href="#" class="btn btn-default btn-transparent event-tickets event-register-button">Register</a> -->
+          <ul class="action-buttons">
+              <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="fa fa-share-alt"></i></a></li>
+              <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></li>
+<!--               <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li> -->
+          </ul>
+      </div>
+  </div>
+<% elsif day.wday == 5 %>
+  <div class="event-list-item event-dynamic">
+    <div class="event-list-item-date">
+        <span class="event-date">
+            <span class="event-day"><%= day.strftime("%d") %></span>
+            <span class="event-month"><%= day.strftime("%b, %Y") %></span>
+        </span>
+    </div>
+    <div class="event-list-item-info">
+        <div class="lined-info">
+            <h4><a href="#" class="event-title">Prayer Night</a></h4>
+        </div>
+        <div class="lined-info">
+            <span class="meta-data"><i class="fa fa-clock-o"></i> Friday, <span class="event-time">10:00 PM</span></span>
+        </div>
+        <div class="lined-info event-location">
+            <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">Teleconference: 319-527-2723. Access Code: 233451</span></span>
+        </div>
+    </div>
+    <div class="event-list-item-actions">
+        <!-- <a href="#" class="btn btn-default btn-transparent event-tickets event-register-button">Register</a> -->
+        <ul class="action-buttons">
+            <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
+            <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></li>
+<!--             <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li> -->
+        </ul>
+    </div>
+  </div>
+
+<% elsif day.wday == 0 %>
+  <div class="event-list-item event-dynamic">
+      <div class="event-list-item-date">
+          <span class="event-date">
+              <span class="event-day"><%= day.strftime("%d") %></span>
+              <span class="event-month"><%= day.strftime("%b, %Y") %></span>
+          </span>
+      </div>
+      <div class="event-list-item-info">
+          <div class="lined-info">
+              <% if day.strftime("%d %b, %Y") == DateTime.parse("26 MAR, 2017").strftime("%d %b, %Y") %>
+           <!--     <h4><a href="#" class="event-title">Special Service with Dr. Francis Myles</a></h4> -->
+              <% else %>
+                <h4><a href="#" class="event-title">Sunday Service</a></h4>
+              <% end %>
+          </div>
+          <div class="lined-info">
+              <% if day.strftime("%d %b, %Y") == DateTime.parse("26 MAR, 2017").strftime("%d %b, %Y") %>
+              <span class="meta-data"><i class="fa fa-clock-o"></i> Sunday, <span class="event-time">10:00 AM </span></span>
+              <% else %>
+              <span class="meta-data"><i class="fa fa-clock-o"></i> Sunday, <span class="event-time">10:00 AM</span></span>
+              <% end %>
+          </div>
+          <div class="lined-info event-location">
+                 <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">6400 Mission Rd Prairie Village Kansas 66208.</span></span>
+          </div>
+      </div>
+      <div class="event-list-item-actions">
+          <!-- <a href="#" class="btn btn-default btn-transparent event-tickets event-register-button">Register</a> -->
+          <ul class="action-buttons">
+              <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="fa fa-share-alt" aria-hidden="true"></i></a></li>
+              <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></li>
+<!--               <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li> -->
+          </ul>
+      </div>
+  </div>
+<% end %>

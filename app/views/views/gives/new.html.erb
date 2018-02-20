@@ -1,0 +1,135 @@
+<!-- Start Body Content -->
+<div class="main" role="main">
+  <div id="content" class="content full">
+      <div class="container">
+            <div class="row">
+              <div class="col-md-12 payment-errors"></div>
+              <%= form_for(:gives, url: gives_path, html: { :class => "contact-form clearfix", :id => "payment-form" }) do |f| %>
+                <div class="col-md-12"><h2>Donate</h2></div>
+                <div class="col-md-8 col-sm-7">
+                    <noscript>
+                        <p>This form requires Javascript to use</p>
+                    </noscript>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">First Name</h4>
+                                    <%= f.text_field :first_name, autofocus: true, required: true,  :class => "form-control input-lg", :value => current_user.present? ? current_user.first_name : '' %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Last Name</h4>
+                                    <%= f.text_field :last_name, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.last_name : '' %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Phone Number</h4>
+                                    <%= f.phone_field :phone_number, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.phone_number : '' %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Address</h4>
+                                    <%= f.text_field :address, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.address : '' %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">City</h4>
+                                    <%= f.text_field :city, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.city : '' %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">State</h4>
+                                    <%= f.text_field :state, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.state : '' %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Zip</h4>
+                                    <%= f.text_field :zip, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.zip : '' %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Email</h4>
+                                    <%= f.email_field :email, :class => "form-control input-lg", required: true, :value => current_user.present? ? current_user.email : '' %>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Categories</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Tithe</h4>
+                                    <%= f.number_field :tithe, step: 0.01, min: 0.0, :value => "0.0", :id => "tithe", :class => "form-control input-lg"%>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Offering</h4>
+                                    <%= f.number_field :offering, step: 0.01, min: 0.0, :value => "0.0", :id => "offering", :class => "form-control input-lg"%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Missions</h4>
+                                    <%= f.number_field :missions, step: 0.01, min: 0.0, :value => "0.0", :id => "missions", :class => "form-control input-lg" %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h4 class="short accent-color">Other</h4>
+                                    <%= f.number_field :other, step: 0.01, min: 0.0, :value => "0.0", :id => "other", :class => "form-control input-lg" %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                      <script id="stripe-script" src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= STRIPE_PUBLIC_KEY %>"
+                                              data-description="Donations"
+                                              data-label="Donate with Card"
+                                              data-panel-label="Donate"
+                                              data-locale="auto">
+                                      </script>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5">
+                        <div class="row">
+                            <% if user_signed_in? %>
+                                <hr class="fw cont">
+                                  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "btn btn-primary"%>
+                                <hr class="fw cont">
+                                <%= link_to "Edit Profile", edit_user_registration_path, :method => :get, :class => "btn btn-primary" %>
+                                <hr class="fw cont">
+                            <% else %>
+                                    <h3>Already Registered?</h3>
+                                    <%= link_to "Sign In", new_user_session_path, :class => "btn btn-primary", :method => :get  %>
+                                <hr class="fw cont">
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

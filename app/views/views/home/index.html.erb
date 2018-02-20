@@ -1,0 +1,141 @@
+<!-- Start Hero Slider -->
+    <div class="hero-slider heroflex flexslider clearfix" data-autoplay="yes" data-pagination="yes" data-arrows="yes" data-style="fade" data-speed="7000" data-pause="yes">
+     <ul class="slides">
+        <!--   <li class="parallax main_four">
+      <div class="flex-caption white" data-appear-animation="fadeInRight" data-appear-animation-delay="500"> 
+        <strong>To Serve God</strong>
+        </div> 
+    </li> -->
+    <li class="parallax main_one">
+       <div class="flex-caption white" data-appear-animation="fadeInRight" data-appear-animation-delay="300" height= "1200" style="font-weight: bold;">Welcome to Rccg Agape House&nbsp;Kansas.</div>
+        <!--  <strong>Welcome to Rccg Agape House&nbsp;Church</strong> -->
+       <!-- </div> -->
+    </li>
+   <li class="parallax main_two">
+       <div class="flex-caption white" data-appear-animation="fadeInRight" data-appear-animation-delay="300"> 
+        <!--  <strong>To Walk In Love</strong> -->
+       </div>
+    </li> 
+    <li class="parallax main_three">
+       <div class="flex-caption white" data-appear-animation="fadeInRight" data-appear-animation-delay="300"> 
+           <!-- <strong>To lead people to Christ</strong> -->
+       </div> 
+    </li> 
+     <!--  <li class="parallax main_four">
+      <div class="flex-caption white" data-appear-animation="fadeInRight" data-appear-animation-delay="500"> 
+        <strong>To Serve God</strong>
+        </div> 
+    </li> -->
+    </ul>
+         <canvas id="canvas-animation"></canvas>
+         
+</div>
+    <!-- End Hero Slider -->
+    <div class="upcoming-event-bar event-dynamic">
+    <div class="container">
+        <div class="row">
+            <% unless date_of_next("Sunday").strftime("%d %b, %Y") == DateTime.parse("26 MAR, 2017").strftime("%d %b, %Y") %>
+            <div class="col-md-6 col-sm-6">
+               <span class="label label-primary" style="font-weight: bold;">Next Event:</span> 
+                <h3><a href="#" class="event-title" style="font-weight: bold;">Sunday Service</a></h3>
+                <h4 style="margin:0px;">
+                <span class="meta-data" style="font-weight: bold;">On <span class="event-date"><%= date_of_next("Sunday").strftime("%d %b, %Y") %></span> at <span class="event-time">10:00 AM</span> at</span><span class="meta-data event-location"> <span class="event-location-address">Indian Hill Middle School</span> <span>6400 Mission Rd, Prairie Village, KANSAS 66208</span>
+                </h4>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div id="counter" class="counter clearfix" data-date="<%= date_of_next("Sunday").strftime("%d %b, %Y") %>">
+                    <div class="timer-col"> <span id="days"></span> <span class="timer-type">Days</span> </div>
+                    <div class="timer-col"> <span id="hours"></span> <span class="timer-type">Hours</span> </div>
+                    <div class="timer-col"> <span id="minutes"></span> <span class="timer-type">Minutes</span> </div>
+                    <div class="timer-col"> <span id="seconds"></span> <span class="timer-type">Seconds</span> </div>
+                </div>
+            </div>
+            <% else %>
+            
+            <div class="col-md-4 col-sm-4">
+                <div id="counter" class="counter clearfix" data-date="<%= date_of_next("Sunday").strftime("%d %b, %Y") %>">
+                    <div class="timer-col"> <span id="days"></span> <span class="timer-type">Days</span> </div>
+                    <div class="timer-col"> <span id="hours"></span> <span class="timer-type">Hours</span> </div>
+                    <div class="timer-col"> <span id="minutes"></span> <span class="timer-type">Minutes</span> </div>
+                    <div class="timer-col"> <span id="seconds"></span> <span class="timer-type">Seconds</span> </div>
+                </div>
+            </div>
+            <% end %>
+            <div class="col-md-2 text-align-right">
+                <ul class="action-buttons">
+                <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="fa fa-share-alt"></i></a></li>
+                <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="fa fa-compass"></i></a></li>
+                   <!-- <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="overover" data-original-title="Share Event" class="event-share-link"><i class="fa fa-share-alt"></i></a></li>
+                    <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="fa fa-compass"></i></a></li> -->
+<!--                     <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li> -->
+                </ul>
+                <!-- <a href="#" class="btn btn-primary btn-sm event-tickets event-register-button">Register</a> -->
+            </div>
+        </div>
+    </div>
+   </div>
+<div class="spacer-20"></div>
+    <!-- Start Body Content -->
+    <div class="main" role="main">
+      <div id="content" class="content full">
+          <div class="container">
+              <div class="row">
+                    <div class="col-md-4">
+                      <div class="widget latest_sermons_widget">
+                          <ul>
+                              <li class="most-recent-sermon clearfix">
+                                    <h3></h3>
+                                    <hr class="sm">
+                                    <div class="latest-sermon-video fw-video">
+                                     <!--   <iframe width="854" height="480" src="https://www.youtube.com/embed/tVHarV-N02A" frameborder="0" allowfullscreen></iframe> -->
+
+                                      <iframe width="1280" height="720" src="https://www.youtube.com/embed/zNUR6w_4EtU" frameborder="0" gesture="media" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="latest-sermon-content">
+                                      <!--  <h4><a href="single-sermon.html">Thank you for worshipping with us!</a></h4> -->
+                                        <h4><a href="single-sermon.html">Testimony & Thanksgiving Service - Nov 5, 2017</a></h4>
+                                        <div class="meta-data"><a href="#"></a></div>
+                                        <p></p>
+                                    </div>
+                                     <li><a class= "basic-link" href="/sermons" target="_blank">Watch Sermons</a></li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                      
+                <div class="col-md-7 col-sm-7">
+                    <div class="element-block events-listing">
+                         <a href="#" class="pull-right basic-link">All Events</a>
+                            <h3 class="element-title">Upcoming Events</h3>
+                            <hr class="sm">
+                        </div>
+                        <div class="events-listing-content">
+                            <%= render partial: 'event_listing', :locals => {:day => Date.today} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 1.day.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 2.days.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 3.days.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 4.days.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 5.days.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 6.days.from_now} %>
+                            <%= render partial: 'event_listing', :locals => {:day => 7.days.from_now} %>
+
+
+                         
+                           
+                        </div>
+                    </div>
+                    
+
+                </div>
+              </div>
+            </div>
+        </div>
+     
+     
+        <div class="spacer-90"></div>
+</div> 
+</div>
+
+
+
+ 
