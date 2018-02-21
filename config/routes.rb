@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   resources :home
 root   'home#index'
  get '/contact', to: 'contact#new', as: 'new_contact'
