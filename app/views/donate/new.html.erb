@@ -23,8 +23,107 @@
       <div id="content" class="content full">
         <div class="container">
               <div class="text-align-center error-404">
-                <h1 class="huge">404</h1>
-                  <hr class="sm">
+              
+    <iframe
+      id="JotFormIFrame-80577258939171"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      src="https://form.jotform.com/80577258939171"
+      frameborder="0"
+      style="width: 1px;
+      min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-80577258939171");
+      if(window.location.href && window.location.href.indexOf("?") > -1) {
+        var get = window.location.href.substr(window.location.href.indexOf("?") + 1);
+        if(ifr && get.length > 0) {
+          var src = ifr.src;
+          src = src.indexOf("?") > -1 ? src + "&" + get : src  + "?" + get;
+          ifr.src = src;
+        }
+      }
+      window.handleIFrameMessage = function(e) {
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
+               <!-- <h1 class="huge">404</h1> -->
+                 <!-- <hr class="sm"> -->
+                 
+               <!--   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <
+                    <input type="hidden" name="first_name" value="John">
+                    <input type="hidden" name="last_name" value="Doe">
+                    <input type="hidden" name="address1" value="9 Elm Street">
+                    <input type="hidden" name="address2" value="Apt 5">
+                    <input type="hidden" name="city" value="Berwyn">
+                    <input type="hidden" name="state" value="PA">
+                    <input type="hidden" name="zip" value="19312">
+                    <input type="hidden" name="night_phone_a" value="610">
+                    <input type="hidden" name="night_phone_b" value="555">
+                    <input type="hidden" name="night_phone_c" value="1234">
+                    <input type="hidden" name="email" value="jdoe@zyzzyu.com">
+                      <input type="hidden" name="cmd" value="_donations">
+                      <input type="hidden" name="business" value="rccg_agapehouse@yahoo.com">
+                      <input type="hidden" name="lc" value="US">
+                      <input type="hidden" name="item_name" value="Tithe/Offering">
+                      <input type="hidden" name="no_note" value="0">
+                      <input type="hidden" name="currency_code" value="USD">
+                      <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+                      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form> -->
+
        
         <!--  <p>The page you are looking for was moved, removed, renamed<br>or might never existed. You stumbled upon a broken link :(</p> -->
               </div>
