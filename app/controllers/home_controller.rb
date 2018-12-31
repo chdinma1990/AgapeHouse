@@ -18,8 +18,8 @@ class HomeController < ApplicationController
     #  index += 2
    # end
 #end 
-<<<<<<< HEAD
+
 end
-=======
+
 end
->>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
+

@@ -1,17 +1,15 @@
 #!/usr/bin/env ruby
-<<<<<<< HEAD
-=======
+
 require 'pathname'
->>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
+
 require 'fileutils'
 include FileUtils
 
 # path to your application root.
-<<<<<<< HEAD
+
 APP_ROOT = File.expand_path('..', __dir__)
-=======
 APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
->>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
+
 
 def system!(*args)
   system(*args) || abort("\n== Command #{args} failed ==")
@@ -28,10 +26,7 @@ chdir APP_ROOT do
   # Install JavaScript dependencies if using Yarn
   # system('bin/yarn')
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
   # puts "\n== Copying sample files =="
   # unless File.exist?('config/database.yml')
   #   cp 'config/database.yml.sample', 'config/database.yml'

@@ -1,15 +1,14 @@
 #!/usr/bin/env ruby
-<<<<<<< HEAD
+
 APP_ROOT = File.expand_path('..', __dir__)
 Dir.chdir(APP_ROOT) do
   begin
     exec "yarnpkg", *ARGV
-=======
+
 VENDOR_PATH = File.expand_path('..', __dir__)
 Dir.chdir(VENDOR_PATH) do
   begin
     exec "yarnpkg #{ARGV.join(" ")}"
->>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
   rescue Errno::ENOENT
     $stderr.puts "Yarn executable was not detected in the system."
     $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
