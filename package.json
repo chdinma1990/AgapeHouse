@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "agapehouse",
+=======
+  "name": "rccgagapehouse",
+>>>>>>> 059154a3c63e1371d5ce9effc3b28399f146dd19
   "private": true,
   "dependencies": {}
 }
